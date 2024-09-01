@@ -1,36 +1,18 @@
 {
-	"typescript.tsdk": "node_modules/typescript/lib",
-	"typescript.enablePromptUseWorkspaceTsdk": true,
-	"tailwindCSS.experimental.classRegex": [
-		["(?:twMerge|twJoin|cva|cn|clsx)\\(([^\\);]*)[\\);]", "[`'\"]([^'\"`,;]*)[`'\"]"]
-	],
-	"tailwindCSS.classAttributes": ["className", "tw", "class"],
-	"typescript.preferences.importModuleSpecifier": "non-relative",
-	"editor.defaultFormatter": "esbenp.prettier-vscode",
-	"files.associations": {
-		"*.css": "tailwindcss"
-	},
-	"editor.formatOnSave": true,
-	"editor.codeActionsOnSave": {
-		"source.fixAll.eslint": "always"
-	},
-	"editor.quickSuggestions": {
-		"strings": true
-	},
-	"workbench.colorCustomizations": {
-		"commandCenter.border": "#e7e7e799",
-		"sideBar.border": "#353f52",
-		"statusBar.background": "#212733",
-		"statusBar.border": "#212733",
-		"statusBar.foreground": "#e7e7e7",
-		"statusBarItem.hoverBackground": "#353f52",
-		"statusBarItem.remoteBackground": "#212733",
-		"statusBarItem.remoteForeground": "#e7e7e7",
-		"tab.activeBorder": "#353f52",
-		"titleBar.activeBackground": "#212733",
-		"titleBar.activeForeground": "#e7e7e7",
-		"titleBar.border": "#212733",
-		"titleBar.inactiveBackground": "#21273399",
-		"titleBar.inactiveForeground": "#e7e7e799"
-	}
+    "workbench.colorCustomizations": {
+        "commandCenter.border": "#e7e7e799",
+        "sideBar.border": "#353f52",
+        "statusBar.background": "#212733",
+        "statusBar.border": "#212733",
+        "statusBar.foreground": "#e7e7e7",
+        "statusBarItem.hoverBackground": "#353f52",
+        "statusBarItem.remoteBackground": "#212733",
+        "statusBarItem.remoteForeground": "#e7e7e7",
+        "tab.activeBorder": "#353f52",
+        "titleBar.activeBackground": "#212733",
+        "titleBar.activeForeground": "#e7e7e7",
+        "titleBar.border": "#212733",
+        "titleBar.inactiveBackground": "#21273399",
+        "titleBar.inactiveForeground": "#e7e7e799"
+    }
 }
