@@ -16,19 +16,19 @@ export default function Index() {
     y: useSpring(mouse.y, { stiffness: 75, damping: 100, mass: 3 }),
   };
 
-  const manageMouse = (e) => {
-    const { innerWidth, innerHeight } = window;
-    const { clientX, clientY } = e;
-    const x = clientX / innerWidth;
-    const y = clientY / innerHeight;
-    mouse.x.set(x);
-    mouse.y.set(y);
-  };
-
   useEffect(() => {
+    const manageMouse = (e) => {
+      const { innerWidth, innerHeight } = window;
+      const { clientX, clientY } = e;
+      const x = clientX / innerWidth;
+      const y = clientY / innerHeight;
+      mouse.x.set(x);
+      mouse.y.set(y);
+    };
+
     window.addEventListener("mousemove", manageMouse);
     return () => window.removeEventListener("mousemove", manageMouse);
-  }, [manageMouse]);
+  }, [mouse.x, mouse.y]);
 
   return (
     <Canvas
