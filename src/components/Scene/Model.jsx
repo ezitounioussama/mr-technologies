@@ -23,9 +23,9 @@ export default function Model({ mouse }) {
     <group dispose={null}>
       <group>
         <Text
-          scale={viewport.width / 5}
+          scale={viewport.width / 7}
           font={"/fonts/PPNeueMontreal-Bold.otf"}
-          position={[0, 0, -1]}
+          position={[0, 5, 100]}
           fontSize={0.5}
           color="#194178"
           anchorX="center"
@@ -33,6 +33,20 @@ export default function Model({ mouse }) {
         >
           Mr Technologies!
         </Text>
+        <Text
+          scale={viewport.width / 10}
+          font={"/fonts/PPNeueMontreal-Bold.otf"}
+          position={[0, -10, 100]}
+          fontSize={0.5}
+          color="#194178"
+          anchorX="center"
+          anchorY="middle"
+          animate={{ opacity: [1, 0.5, 1] }} // Define the opacity animation
+          transition={{ duration: 1.5, repeat: Infinity, ease: "easeInOut" }}
+        >
+          Your Laptop & Electronics Hub
+        </Text>
+
         <group>
           <Mesh
             node={nodes.Sphere001}

@@ -32,7 +32,7 @@ export default function Index() {
 
   return (
     <Canvas
-      style={{ background: "#fff", height: "100% !important" }}
+      style={{ background: "#e0e0e0", height: "100% !important" }}
       orthographic
       camera={{ position: [0, 0, 200], zoom: 10 }}
     >
