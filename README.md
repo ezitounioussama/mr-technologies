@@ -1,6 +1,6 @@
 ## 🚧 Caution: Playground Zone! 🚧
 
-### Development in Progress: 06/09/2024 🛠️
+### Development in Progress 🛠️
 
 ### Exciting News: The development of MR-Technologies websites has begun, led by Oussama Ezitouni and Mohamed El Machhoune. Stay tuned for something truly magical! ✨
 
