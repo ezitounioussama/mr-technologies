@@ -1,5 +1,4 @@
 "use client";
-import styles from "./style.module.scss";
 import React, { useState } from "react";
 import { motion } from "framer-motion";
 import { height } from "../anim";
@@ -56,10 +55,10 @@ const Index: React.FC = () => {
       initial="initial"
       animate="enter"
       exit="exit"
-      className={styles.nav}
+      className="overflow-hidden"
     >
-      <div className={styles.wrapper}>
-        <div className={styles.container}>
+      <div className="flex flex-col lg:flex-row gap-12 mb-20 lg:mb-0 lg:justify-between">
+        <div className="flex flex-col justify-between">
           <Body
             links={links}
             selectedLink={selectedLink}

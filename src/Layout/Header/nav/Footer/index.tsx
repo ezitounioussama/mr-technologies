@@ -13,7 +13,7 @@ export default function Footer() {
           animate="enter"
           exit="exit"
         >
-          <span>Made by:</span>GoTodev
+          <span>Made by : </span>GoTodev
         </motion.li>
       </ul>
     </div>
