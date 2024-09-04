@@ -13,7 +13,7 @@ const Index: React.FC = () => {
 
   return (
     <div
-      className={`fixed w-full px-5 py-10 box-border dark:bg-black bg-white dark:text-white text-black`}
+      className={`fixed w-full px-5 py-10 box-border dark:bg-black bg-white dark:text-white text-black z-[1000]`}
     >
       <div className="relative flex justify-center items-center uppercase text-xs font-normal">
         <Link
