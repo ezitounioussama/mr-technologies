@@ -7,29 +7,28 @@ const data = [
     title: "Explore Our Laptop Collection",
     content:
       "Dive into a curated selection of high-performance laptops designed to meet your needs. Whether you’re looking for the latest models or reliable classics, our collection has something for everyone.",
-    srcImage:
-      "https://images.unsplash.com/photo-1717501219716-b93a67d2f7b2?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHwzfHx8ZW58MHx8fHx8",
+    srcImage: "https://rog.asus.com/media/1672804078911.jpg",
   },
   {
     title: "Choose Your Perfect Laptop",
     content:
       "With our intuitive browsing experience, finding your ideal laptop is just a few clicks away. Filter by brand, specifications, and more to discover the perfect match for your needs.",
     srcImage:
-      "https://images.unsplash.com/photo-1717501219074-943fc738e5a2?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwcm9maWxlLXBhZ2V8M3x8fGVufDB8fHx8fA%3D%3D",
+      "https://i.rtings.com/assets/pages/ZRskDBBI/best-laptop-brands-20230420-3-medium.jpg?format=auto",
   },
-  {
-    title: "Seamless Setup & Integration",
-    content:
-      "Setting up your new laptop has never been easier. Follow our simple, step-by-step guides to get started quickly, so you can focus on what matters most.",
-    srcImage:
-      "https://images.unsplash.com/photo-1717501218636-a390f9ac5957?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwcm9maWxlLXBhZ2V8Nnx8fGVufDB8fHx8fA%3D%3D",
-  },
+  // {
+  //   title: "Seamless Setup & Integration",
+  //   content:
+  //     "Setting up your new laptop has never been easier. Follow our simple, step-by-step guides to get started quickly, so you can focus on what matters most.",
+  //   srcImage:
+  //     "https://images.unsplash.com/photo-1717501218636-a390f9ac5957?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwcm9maWxlLXBhZ2V8Nnx8fGVufDB8fHx8fA%3D%3D",
+  // },
   {
     title: "Get Started Instantly",
     content:
       "Once you've found the right laptop, complete your purchase and start working or playing immediately. Enjoy fast delivery and easy setup to get up and running in no time.",
     srcImage:
-      "https://images.unsplash.com/photo-1717501219781-54ac9d09051b?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwcm9maWxlLXBhZ2V8N3x8fGVufDB8fHx8fA%3D%3D",
+      "https://www.stuff.tv/wp-content/uploads/sites/2/2021/04/Stuff-Best-Laptop-Lead.png",
   },
 ];
 
@@ -51,7 +50,7 @@ export default function Feautures() {
   }, [timer]);
 
   return (
-    <div className="flex flex-col mx-10">
+    <div className="flex flex-col mx-10 mb-20">
       <div className="text-center mb-20">
         <p className=" uppercase text-neutral-500 mb-2 text-sm font-medium">
           Why Choose Our Laptops?
