@@ -1,5 +1,7 @@
 import { Link } from "react-router-dom";
 import { MacbookScroll } from "../ui/mr-technologies-scroll";
+import { useContext } from "react";
+import { useTheme } from "../../Theme/theme-provider";
 
 export default function MrTechnologiesLaptop() {
   return (
@@ -17,7 +19,15 @@ export default function MrTechnologiesLaptop() {
 }
 // Peerlist logo
 const Badge = () => {
+  const { theme } = useTheme();
+
   return (
-    <img src="/Gotodev/Logo_White.png" alt="Gotodev" className="w-8 h-8" />
+    <>
+      {theme === "dark" ? (
+        <img src="/Gotodev/Logo_White.png" alt="Gotodev" className="w-8 h-8" />
+      ) : (
+        <img src="/Gotodev/Logo_Black.png" alt="Gotodev" className="w-8 h-8" />
+      )}
+    </>
   );
 };
