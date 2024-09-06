@@ -50,7 +50,7 @@ export default function Feautures() {
   }, [timer]);
 
   return (
-    <div className="flex flex-col mx-10 mb-20">
+    <div className="flex flex-col mx-10 my-20">
       <div className="text-center mb-20">
         <p className=" uppercase text-neutral-500 mb-2 text-sm font-medium">
           Why Choose Our Laptops?
