@@ -1,6 +1,5 @@
 import { Link } from "react-router-dom";
 import { MacbookScroll } from "../ui/mr-technologies-scroll";
-import { useContext } from "react";
 import { useTheme } from "../../Theme/theme-provider";
 
 export default function MrTechnologiesLaptop() {
