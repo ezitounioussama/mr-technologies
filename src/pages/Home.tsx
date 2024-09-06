@@ -5,7 +5,7 @@ import MrTechnologiesLaptop from "../components/Slider/MrTechnologiesLaptop";
 
 export default function Home() {
   return (
-    <div className="relative z-30 dark:bg-background bg-white">
+    <div className="relative z-30 dark:bg-black bg-white">
       <MrTechnologiesLaptop />
       <Feautures />
       <Section />
