@@ -3,7 +3,7 @@ import FramerMagnetic from "./../../components/ui/magnetique-framer";
 
 const Content: React.FC = () => {
   return (
-    <div className="bg-[#1b4377] dark:bg-zinc-900 py-8 px-12 h-full w-full flex flex-col justify-between">
+    <div className="bg-[#1b4377] py-8 px-12 h-full w-full flex flex-col justify-between">
       <Section2 />
     </div>
   );

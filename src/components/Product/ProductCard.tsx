@@ -32,6 +32,7 @@ export function ProductCard({
               width={500}
               height={500}
               className="rounded-2xl object-cover aspect-square"
+              loading="lazy"
             />
           </Lens>
           <motion.div

@@ -11,7 +11,8 @@ import { useTheme } from "../../Theme/theme-provider";
 
 const Index: React.FC = () => {
   const [isActive, setIsActive] = useState(false);
-  const {theme}= useTheme();
+  const { theme } = useTheme();
+
   return (
     <div
       className={`fixed w-full px-5 py-10 box-border dark:bg-black bg-white dark:text-white text-black z-[1000]`}
@@ -21,8 +22,18 @@ const Index: React.FC = () => {
           className="absolute left-0 text-white dark:text-black no-underline"
           to="/"
         >
-          <img  src={theme==="dark"?"/MrTechnologies/logo-dark.webp":"/MrTechnologies/logo-white.webp"} alt="mr-technologies-logo" className="w-16" />
+          <img
+            src={
+              theme === "dark"
+                ? "/MrTechnologies/logo-dark.webp"
+                : "/MrTechnologies/logo-white.webp"
+            }
+            alt="mr-technologies-logo"
+            className="w-16"
+          />
         </Link>
+
+        {/* Menu Toggle */}
         <div
           onClick={() => setIsActive(!isActive)}
           className="flex items-center justify-center gap-2 cursor-pointer"
@@ -45,6 +56,8 @@ const Index: React.FC = () => {
             </motion.p>
           </div>
         </div>
+
+        {/* Right Section (Cart & Mode Toggle) */}
         <motion.div
           variants={opacity}
           animate={!isActive ? "open" : "closed"}
@@ -71,13 +84,19 @@ const Index: React.FC = () => {
           <ModeToggle />
         </motion.div>
       </div>
+
+      {/* Nav Menu Overlay */}
       <motion.div
         variants={background}
         initial="initial"
         animate={isActive ? "open" : "closed"}
         className="absolute left-0 top-full bg-black opacity-50 h-full w-full"
       ></motion.div>
-      <AnimatePresence mode="wait">{isActive && <Nav />}</AnimatePresence>
+
+      {/* Render Nav Component */}
+      <AnimatePresence mode="wait">
+        {isActive && <Nav setIsActive={setIsActive} />}
+      </AnimatePresence>
     </div>
   );
 };

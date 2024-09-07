@@ -40,7 +40,9 @@ const links: LinkProps[] = [
   },
 ];
 
-const Index: React.FC = () => {
+const Index: React.FC<{ setIsActive: (isActive: boolean) => void }> = ({
+  setIsActive,
+}) => {
   const [selectedLink, setSelectedLink] = useState<{
     isActive: boolean;
     index: number;
@@ -48,6 +50,10 @@ const Index: React.FC = () => {
     isActive: false,
     index: 0,
   });
+
+  const handleLinkClick = () => {
+    setIsActive(false);
+  };
 
   return (
     <motion.div
@@ -63,6 +69,7 @@ const Index: React.FC = () => {
             links={links}
             selectedLink={selectedLink}
             setSelectedLink={setSelectedLink}
+            onLinkClick={handleLinkClick}
           />
           <Footer />
         </div>

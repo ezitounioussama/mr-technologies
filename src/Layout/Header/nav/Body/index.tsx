@@ -15,12 +15,14 @@ interface BodyProps {
     isActive: boolean;
     index: number;
   }) => void;
+  onLinkClick: () => void; // New prop for handling link clicks
 }
 
 const Body: React.FC<BodyProps> = ({
   links,
   selectedLink,
   setSelectedLink,
+  onLinkClick, // Receive the onLinkClick prop
 }) => {
   const getChars = (word: string): JSX.Element[] => {
     return word.split("").map((char, i) => (
@@ -40,7 +42,7 @@ const Body: React.FC<BodyProps> = ({
   return (
     <div className={styles.body}>
       {links.map((link, index) => (
-        <Link key={`l_${index}`} to={link.href}>
+        <Link key={`l_${index}`} to={link.href} onClick={onLinkClick}>
           <motion.p
             onMouseOver={() => setSelectedLink({ isActive: true, index })}
             onMouseLeave={() => setSelectedLink({ isActive: false, index })}
