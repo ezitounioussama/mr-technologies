@@ -4,19 +4,12 @@ import FramerMagnetic from "./../../components/ui/magnetique-framer";
 const Content: React.FC = () => {
   return (
     <div className="bg-[#1b4377] dark:bg-zinc-900 py-8 px-12 h-full w-full flex flex-col justify-between">
-      <Section1 />
       <Section2 />
     </div>
   );
 };
 
-const Section1: React.FC = () => {
-  return (
-    <div>
-      <Nav />
-    </div>
-  );
-};
+
 
 const Section2: React.FC = () => {
   const currentYear = new Date().getFullYear();
@@ -72,30 +65,17 @@ const Section2: React.FC = () => {
           </svg>
         </FramerMagnetic>
       </div>
+      <div className="flex shrink-0 gap-20">
+      <div className="flex  gap-5">
+        <p className="text-white">Terms of Service</p>
+        <p className="text-white">Privacy Policy</p>
+        <p className="text-white">Legal Notice</p>
+      </div>
+    </div>
       <p className="text-white">© Copyright Mr Technologies {currentYear}</p>
     </div>
   );
 };
 
-const Nav: React.FC = () => {
-  return (
-    <div className="flex shrink-0 gap-20">
-      <div className="flex flex-col gap-2">
-        <h3 className="mb-2 uppercase font-semibold text-white">About</h3>
-        <p className="text-white">Home</p>
-        <p className="text-white">Projects</p>
-        <p className="text-white">Our Mission</p>
-        <p className="text-white">Contact Us</p>
-      </div>
-      <div className="flex flex-col gap-2">
-        <h3 className="mb-2 uppercase font-semibold text-white">Education</h3>
-        <p className="text-white">News</p>
-        <p className="text-white">Learn</p>
-        <p className="text-white">Certification</p>
-        <p className="text-white">Publications</p>
-      </div>
-    </div>
-  );
-};
 
 export default Content;

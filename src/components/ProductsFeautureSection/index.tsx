@@ -11,8 +11,8 @@ const anim = {
 };
 
 interface Products {
-  title1: string;
-  title2: string;
+  Mark: string;
+  title: string;
   src: string;
 }
 
@@ -23,7 +23,7 @@ export default function ProductsFeautureSection({
 }) {
   const [isActive, setIsActive] = useState(false);
 
-  const { title1, title2, src } = products;
+  const { Mark, title, src } = products;
   return (
     <div
       onMouseEnter={() => {
@@ -34,15 +34,15 @@ export default function ProductsFeautureSection({
       }}
       className="border-t-2 text-black dark:text-white border-black dark:border-white py-[0.8vw] w-full flex justify-center items-center cursor-pointer last:border-b-2"
     >
-      <p className="text-[5vw] mr-[0.75vw]">{title1}</p>
+      <p className="text-[5vw] mr-[0.75vw]">{Mark}</p>
       <motion.div
         variants={anim}
         animate={isActive ? "open" : "closed"}
         className="overflow-hidden flex justify-center w-0"
       >
-        <img src={`/medias/${src}`} className="w-[10vw]" />
+        <img src={`${src}`} className="w-[10vw]" />
       </motion.div>
-      <p className="text-[5vw] ml-[0.75vw]">{title2}</p>
+      <p className="text-[5vw] ml-[0.75vw]">{title}</p>
     </div>
   );
 }
