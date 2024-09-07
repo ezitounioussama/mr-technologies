@@ -40,6 +40,7 @@ export default function Shop() {
       <div>
         <Products />
       </div>
+      {/* <div></div>  */} // TODO PAGINATION
     </div>
   );
 }
