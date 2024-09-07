@@ -8,6 +8,7 @@ const productData = [
     description:
       "The Air Jordan 4 Retro Reimagined Bred will release on Saturday, February 17, 2024. Your best opportunity to get these right now is by entering raffles and waiting for the official releases.",
     price: 100,
+    categorie: "laptop",
   },
   {
     image:
@@ -16,6 +17,7 @@ const productData = [
     description:
       "The classic Nike Air Max 90 has been revamped for 2024. Its iconic design is perfect for both running and casual wear.",
     price: 120,
+    categorie: "laptop",
   },
   {
     image:
@@ -24,6 +26,7 @@ const productData = [
     description:
       "Experience ultimate comfort with the Adidas Ultraboost 21, built with a responsive Boost midsole.",
     price: 150,
+    categorie: "laptop",
   },
   {
     image:
@@ -32,6 +35,7 @@ const productData = [
     description:
       "A timeless classic, the Converse Chuck Taylor is the perfect sneaker for everyday wear.",
     price: 60,
+    categorie: "laptop",
   },
 ];
 
