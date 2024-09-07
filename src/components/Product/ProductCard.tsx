@@ -1,24 +1,38 @@
 import { useState } from "react";
 import { Lens } from "../ui/lens";
 import { motion } from "framer-motion";
-import { cn } from "../../lib/utils";
 import { ButtonBordred } from "../Button";
 import { Badge } from "../ui/badge";
+import { Product } from "../Products/Products";
+import { useCart } from "../../context/CartContext";
+import { cn } from "../../lib/utils";
+import { Link } from "react-router-dom";
 
-interface ProductCardProps {
-  image: string;
-  name: string;
-  description: string;
-  price: number;
-}
+type ProductCardProps = Pick<
+  Product,
+  "id" | "image" | "title" | "description" | "price"
+>;
 
 export function ProductCard({
+  id,
   image,
-  name,
+  title: name,
   description,
   price,
 }: ProductCardProps) {
   const [hovering, setHovering] = useState(false);
+  const { addToCart, setDrawerOpen } = useCart(); // Access addToCart and setDrawerOpen from the context
+
+  const handleAddToCart = () => {
+    addToCart({
+      id: id, // Ensure a unique ID
+      title: name,
+      description,
+      price,
+      image,
+    });
+    setDrawerOpen(true); // Open the drawer when an item is added
+  };
 
   return (
     <div>
@@ -41,17 +55,22 @@ export function ProductCard({
             }}
             className="py-4 relative z-20"
           >
-            <h2 className="text-white text-md text-left font-bold line-clamp-1">
-              {name}
-            </h2>
-            <p className="text-neutral-200 text-left line-clamp-2 text-sm mt-4">
-              {description}
-            </p>
+            <Link to={`/products/${id}`}>
+              <h2 className="text-white text-md text-left font-bold line-clamp-1">
+                {name}
+              </h2>
+              <p className="text-neutral-200 text-left line-clamp-2 text-sm mt-4">
+                {description}
+              </p>
+            </Link>
             <div className="flex items-center justify-between mt-10">
               <Badge variant={"default"} className="px-5 py-1">
                 {price} $
               </Badge>
-              <ButtonBordred injectedText="Add to cart" />
+              <ButtonBordred
+                injectedText="Add to cart"
+                onClick={handleAddToCart}
+              />
             </div>
           </motion.div>
         </div>
@@ -106,7 +125,7 @@ const Rays = ({ className }: { className?: string }) => {
       >
         <path
           d="M163.917 -89.0982C173.189 -72.1354 80.9618 2.11525 34.7334 30.1553C-11.495 58.1954 -106.505 97.514 -115.777 80.5512C-125.048 63.5885 -45.0708 -3.23233 1.15763 -31.2724C47.386 -59.3124 154.645 -106.061 163.917 -89.0982Z"
-          fill="#8A50FF"
+          fill="#ffffff"
         />
       </g>
       <g
@@ -323,8 +342,8 @@ const Rays = ({ className }: { className?: string }) => {
           y2="351.523"
           gradientUnits="userSpaceOnUse"
         >
-          <stop offset="0.214779" stopColor="#AF53FF" />
-          <stop offset="0.781583" stopColor="#B253FF" stopOpacity="0" />
+          <stop offset="0.214779" stopColor="#fff" />
+          <stop offset="0.781583" stopColor="#fefe" stopOpacity="0" />
         </linearGradient>
         <linearGradient
           id="paint1_linear_120_7480"
@@ -334,8 +353,8 @@ const Rays = ({ className }: { className?: string }) => {
           y2="379.765"
           gradientUnits="userSpaceOnUse"
         >
-          <stop offset="0.214779" stopColor="#AF53FF" />
-          <stop offset="0.781583" stopColor="#9E53FF" stopOpacity="0" />
+          <stop offset="0.214779" stopColor="#fff" />
+          <stop offset="0.781583" stopColor="#fefe" stopOpacity="0" />
         </linearGradient>
         <linearGradient
           id="paint2_linear_120_7480"
@@ -345,8 +364,8 @@ const Rays = ({ className }: { className?: string }) => {
           y2="342.58"
           gradientUnits="userSpaceOnUse"
         >
-          <stop offset="0.214779" stopColor="#9D53FF" />
-          <stop offset="0.781583" stopColor="#A953FF" stopOpacity="0" />
+          <stop offset="0.214779" stopColor="#fefe" />
+          <stop offset="0.781583" stopColor="#fffcec" stopOpacity="0" />
         </linearGradient>
         <linearGradient
           id="paint3_linear_120_7480"
@@ -356,8 +375,8 @@ const Rays = ({ className }: { className?: string }) => {
           y2="187.221"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stopColor="#AF81FF" />
-          <stop offset="1" stopColor="#C081FF" stopOpacity="0" />
+          <stop stopColor="#fff" />
+          <stop offset="1" stopColor="#ffffff" stopOpacity="0" />
         </linearGradient>
         <linearGradient
           id="paint4_linear_120_7480"
@@ -367,8 +386,8 @@ const Rays = ({ className }: { className?: string }) => {
           y2="133.065"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stopColor="#AF81FF" />
-          <stop offset="1" stopColor="#C081FF" stopOpacity="0" />
+          <stop stopColor="#fff" />
+          <stop offset="1" stopColor="#ffff" stopOpacity="0" />
         </linearGradient>
         <linearGradient
           id="paint5_linear_120_7480"
@@ -378,8 +397,8 @@ const Rays = ({ className }: { className?: string }) => {
           y2="174.189"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stopColor="#B981FF" />
-          <stop offset="1" stopColor="#CF81FF" stopOpacity="0" />
+          <stop stopColor="#ffff" />
+          <stop offset="1" stopColor="#ffff" stopOpacity="0" />
         </linearGradient>
         <linearGradient
           id="paint6_linear_120_7480"
@@ -389,8 +408,8 @@ const Rays = ({ className }: { className?: string }) => {
           y2="184.983"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stopColor="#A981FF" />
-          <stop offset="1" stopColor="#CB81FF" stopOpacity="0" />
+          <stop stopColor="#fefe" />
+          <stop offset="1" stopColor="#fefe" stopOpacity="0" />
         </linearGradient>
       </defs>
     </svg>

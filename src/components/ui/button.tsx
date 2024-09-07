@@ -26,6 +26,9 @@ const buttonVariants = cva(
         lg: "h-10 rounded-md px-8",
         icon: "h-9 w-9",
       },
+      disabled: {
+        true: "opacity-50 cursor-not-allowed", // Style for disabled state
+      },
     },
     defaultVariants: {
       variant: "default",
@@ -35,9 +38,10 @@ const buttonVariants = cva(
 );
 
 export interface ButtonProps
-  extends React.ButtonHTMLAttributes<HTMLButtonElement>,
+  extends Omit<React.ButtonHTMLAttributes<HTMLButtonElement>, "disabled">,
     VariantProps<typeof buttonVariants> {
   asChild?: boolean;
+  disabled?: boolean;
 }
 
 const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(

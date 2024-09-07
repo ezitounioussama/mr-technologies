@@ -50,7 +50,7 @@ const DrawerContent = React.forwardRef<
       {...props}
     >
       {showBar ? (
-        <div className="h-44 w-3 rounded-full bg-muted fixed top-[35%] left-2" />
+        <div className="h-36 w-2 rounded-full bg-muted fixed top-[35%] left-2" />
       ) : null}
       {children}
     </DrawerPrimitive.Content>
