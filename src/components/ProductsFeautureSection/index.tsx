@@ -32,7 +32,7 @@ export default function ProductsFeautureSection({
       onMouseLeave={() => {
         setIsActive(false);
       }}
-      className="border-t-2 border-black dark:border-white py-[0.8vw] w-full flex justify-center items-center cursor-pointer last:border-b-2"
+      className="border-t-2 text-black dark:text-white border-black dark:border-white py-[0.8vw] w-full flex justify-center items-center cursor-pointer last:border-b-2"
     >
       <p className="text-[5vw] mr-[0.75vw]">{title1}</p>
       <motion.div
