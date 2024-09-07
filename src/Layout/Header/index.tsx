@@ -7,10 +7,11 @@ import Nav from "./nav";
 import { ModeToggle } from "../../Theme/mode-toggle";
 import { FaGripLines } from "react-icons/fa6";
 import { IoClose } from "react-icons/io5";
+import { useTheme } from "../../Theme/theme-provider";
 
 const Index: React.FC = () => {
   const [isActive, setIsActive] = useState(false);
-
+  const {theme}= useTheme();
   return (
     <div
       className={`fixed w-full px-5 py-10 box-border dark:bg-black bg-white dark:text-white text-black z-[1000]`}
@@ -20,7 +21,7 @@ const Index: React.FC = () => {
           className="absolute left-0 text-white dark:text-black no-underline"
           to="/"
         >
-          <img src="/logo.webp" alt="mr-technologies-logo" className="w-32" />
+          <img  src={theme==="dark"?"/MrTechnologies/logo-dark.webp":"/MrTechnologies/logo-white.webp"} alt="mr-technologies-logo" className="w-16" />
         </Link>
         <div
           onClick={() => setIsActive(!isActive)}
