@@ -4,7 +4,7 @@ import { useTheme } from "../../Theme/theme-provider";
 
 export default function MrTechnologiesLaptop() {
   return (
-    <div className="overflow-hidden dark:bg-[#0B0B0F] bg-white w-full">
+    <div className="overflow-hidden dark:bg-black bg-white w-full">
       <MacbookScroll
         badge={
           <Link to="https://gotodev.ma">

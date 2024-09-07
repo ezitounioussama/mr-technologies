@@ -9,13 +9,11 @@ const Content: React.FC = () => {
   );
 };
 
-
-
 const Section2: React.FC = () => {
   const currentYear = new Date().getFullYear();
 
   return (
-    <div className="flex justify-between items-end">
+    <div className="flex justify-between xl:items-end md:items-end items-center gap-5 xl:flex-row md:flex-row flex-col ">
       <div className="flex justify-center gap-5">
         <FramerMagnetic>
           <svg
@@ -66,16 +64,15 @@ const Section2: React.FC = () => {
         </FramerMagnetic>
       </div>
       <div className="flex shrink-0 gap-20">
-      <div className="flex  gap-5">
-        <p className="text-white">Terms of Service</p>
-        <p className="text-white">Privacy Policy</p>
-        <p className="text-white">Legal Notice</p>
+        <div className="flex  gap-5">
+          <p className="text-white">Terms of Service</p>
+          <p className="text-white">Privacy Policy</p>
+          <p className="text-white">Legal Notice</p>
+        </div>
       </div>
-    </div>
       <p className="text-white">© Copyright Mr Technologies {currentYear}</p>
     </div>
   );
 };
-
 
 export default Content;
