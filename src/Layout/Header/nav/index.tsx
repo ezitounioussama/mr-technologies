@@ -16,12 +16,12 @@ const links: LinkProps[] = [
   {
     title: "Home",
     href: "/",
-    src: "home.png",
+    src: "/MrTechnologies/laptops2.webp",
   },
   {
     title: "Shop",
     href: "/shop",
-    src: "shop.png",
+    src: "/MrTechnologies/laptops1.jpg",
   },
   {
     title: "About Us",

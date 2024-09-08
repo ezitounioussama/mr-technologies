@@ -12,6 +12,31 @@ import { ScrollArea } from "../ui/scroll-area";
 import { Minus, Plus, ShoppingCart, X } from "lucide-react";
 import { useCart } from "../../context/CartContext";
 
+// Helper function to generate WhatsApp message URL
+interface CartItem {
+  id: number;
+  title: string;
+  price: number;
+  quantity: number; // Quantity should always be a number here
+  image: string;
+}
+
+// The function now expects an array of CartItem and a totalPrice as arguments
+const generateWhatsAppMessage = (
+  cartItems: CartItem[],
+  totalPrice: number
+): string => {
+  let message = "*Your Cart Summary*:\n\n";
+  cartItems.forEach((item) => {
+    const title = item.title.trim(); // Trim any unnecessary spaces in the title
+    message += `*${title}* - ${item.quantity} x ${item.price} MAD = ${(
+      item.quantity * item.price
+    ).toFixed(2)} MAD\n`;
+  });
+  message += `\n*Total Price*: ${totalPrice.toFixed(2)} MAD`;
+  return message;
+};
+
 export function Cart() {
   const {
     cartItems,
@@ -33,6 +58,22 @@ export function Cart() {
     (acc, item) => acc + item.price * (item.quantity || 1),
     0
   );
+
+  // WhatsApp URL with the generated message for the specific phone number
+  const handleSendToWhatsApp = (): void => {
+    const cartItemsWithType: CartItem[] = cartItems.map((item) => ({
+      ...item,
+      quantity: item.quantity || 0,
+    }));
+    const message = generateWhatsAppMessage(cartItemsWithType, totalPrice);
+    const whatsappUrl = `https://wa.me/212649455082?text=${encodeURIComponent(
+      message
+    )}`;
+
+    // Open WhatsApp with the generated message in a new tab
+    window.open(whatsappUrl, "_blank");
+  };
+
   return (
     <Drawer direction="right" open={isDrawerOpen} onOpenChange={setDrawerOpen}>
       <DrawerTrigger className="flex items-center justify-center gap-2 cursor-pointer">
@@ -78,7 +119,7 @@ export function Cart() {
                 </p>
 
                 <p className="text-sm text-gray-500 text-center">
-                  {product.price} $
+                  {product.price} MAD
                 </p>
               </div>
               <div className="pl-10 h-0.5 relative bg-zinc-400/10 rotate-90"></div>
@@ -126,13 +167,17 @@ export function Cart() {
                 Total Price
               </p>
               <div className="font-bold text-black dark:text-white">
-                Total: {totalPrice.toFixed(2)} $
+                Total: {totalPrice.toFixed(2)} MAD
               </div>
             </div>
           </div>
         </div>
         <DrawerFooter>
-          <ButtonBordred injectedText="Checkout" />
+          {/* Button to send the cart details via WhatsApp */}
+          <ButtonBordred
+            injectedText="Send to WhatsApp"
+            onClick={handleSendToWhatsApp}
+          />
         </DrawerFooter>
       </DrawerContent>
     </Drawer>

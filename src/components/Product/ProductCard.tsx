@@ -65,7 +65,7 @@ export function ProductCard({
             </Link>
             <div className="flex items-center justify-between mt-10">
               <Badge variant={"default"} className="px-5 py-1">
-                {price} $
+                {price} MAD
               </Badge>
               <ButtonBordred
                 injectedText="Add to cart"

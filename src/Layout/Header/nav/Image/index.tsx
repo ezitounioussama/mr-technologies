@@ -15,7 +15,7 @@ const Index: React.FC<IndexProps> = ({ src, isActive }) => {
       animate={isActive ? "open" : "closed"}
       className={styles.imageContainer}
     >
-      <img src={`/images/${src}`} alt="image" />
+      <img src={src} alt="image" />
     </motion.div>
   );
 };
