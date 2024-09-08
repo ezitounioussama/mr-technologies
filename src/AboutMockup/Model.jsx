@@ -7,7 +7,7 @@ Title: Asus ROG Strix Scar 17 (2023) G733 Gaming Laptop
 */
 
 import { useEffect, useMemo, useRef, useState } from "react";
-import { ThreeElements, useFrame, useThree } from "@react-three/fiber";
+import { useFrame, useThree } from "@react-three/fiber";
 import { useGLTF } from "@react-three/drei";
 import { Color } from "three";
 import { animate } from "framer-motion";
@@ -20,7 +20,7 @@ import laptopModel from "./assets/models/asus_rog_strix_scar_17_2023_g733_gaming
 
 export function Model(props) {
   const { nodes, materials } = useGLTF(laptopModel);
-  const modelRef = useRef<ThreeElements>(null);
+  const modelRef = useRef();
   const {
     viewport: { width, height },
   } = useThree();
