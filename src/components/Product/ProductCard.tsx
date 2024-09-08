@@ -55,7 +55,7 @@ export function ProductCard({
             }}
             className="py-4 relative z-20"
           >
-            <Link to={`/products/${id}`}>
+            <Link to={`/product/${id}`}>
               <h2 className="text-white text-md text-left font-bold line-clamp-1">
                 {name}
               </h2>

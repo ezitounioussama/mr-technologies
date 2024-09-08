@@ -94,16 +94,18 @@ export function Cart() {
                         updateQuantity(product.id, (product.quantity || 1) - 1)
                       }
                     >
-                      <Minus size={16} />
+                      <Minus size={16} className="text-black dark:text-white" />
                     </button>
-                    <span className="px-2">{product.quantity || 1}</span>
+                    <span className="px-2 text-black dark:text-white">
+                      {product.quantity || 1}
+                    </span>
 
                     <button
                       onClick={() =>
                         updateQuantity(product.id, (product.quantity || 1) + 1)
                       }
                     >
-                      <Plus size={16} />
+                      <Plus size={16} className="text-black dark:text-white" />
                     </button>
                   </div>
                 </div>

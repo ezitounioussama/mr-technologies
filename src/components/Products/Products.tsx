@@ -8,6 +8,7 @@ import {
   PaginationNext,
   PaginationPrevious,
 } from "../ui/pagination";
+import { ReusableSelect } from "../Shop/Select";
 
 // Define the Product interface based on the data structure
 export interface Product {
@@ -24,10 +25,22 @@ export interface Product {
   };
 }
 
+const Categories = [
+  { value: "Laptops", label: "Laptops" },
+  { value: "Accessories", label: "Accessories" },
+  { value: "Hardware", label: "Hardware" },
+];
+
+const SortingOptions = [
+  { value: "asc", label: "ASC" },
+  { value: "desc", label: "DESC" },
+];
+
 export default function Products() {
   const [data, setData] = useState<Product[]>([]);
   const [currentPage, setCurrentPage] = useState(1);
   const [productsPerPage] = useState(8); // Number of products per page
+  const [sortOrder, setSortOrder] = useState<string>("asc"); // State for sorting order
 
   useEffect(() => {
     const fetchProducts = async () => {
@@ -43,9 +56,26 @@ export default function Products() {
     fetchProducts();
   }, []);
 
+  const handleSelectChange = (value: string) => {
+    setSortOrder(value);
+  };
+
+  // Sort the data based on the selected sort order (ASC or DESC)
+  const sortedProducts = [...data].sort((a, b) => {
+    if (sortOrder === "asc") {
+      return a.price - b.price; // Ascending order
+    } else if (sortOrder === "desc") {
+      return b.price - a.price; // Descending order
+    }
+    return 0;
+  });
+
   const indexOfLastProduct = currentPage * productsPerPage;
   const indexOfFirstProduct = indexOfLastProduct - productsPerPage;
-  const currentProducts = data.slice(indexOfFirstProduct, indexOfLastProduct);
+  const currentProducts = sortedProducts.slice(
+    indexOfFirstProduct,
+    indexOfLastProduct
+  );
 
   const totalPages = Math.ceil(data.length / productsPerPage);
 
@@ -55,6 +85,20 @@ export default function Products() {
 
   return (
     <>
+      <div className="flex justify-between gap-5 my-10 mx-20">
+        <ReusableSelect
+          options={Categories}
+          placeholder="Select a category"
+          label="Category"
+          onChange={handleSelectChange}
+        />
+        <ReusableSelect
+          options={SortingOptions}
+          placeholder="Select order"
+          label="Order"
+          onChange={handleSelectChange}
+        />
+      </div>
       <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-2 xl:grid-cols-4 mx-10">
         {currentProducts.map((product) => (
           <ProductCard
